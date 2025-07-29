@@ -13,7 +13,6 @@ struct MoodGrid: View {
             Text("Mood Graph for this month")
                 .font(.title)
                 .fontWeight(.semibold)
-                .multilineTextAlignment(.center)
             
             Divider()
                 .padding(.horizontal)
