@@ -9,7 +9,17 @@ import SwiftUI
 
 struct MoodGrid: View {
     var body: some View {
-        Text("insert grid here")
+        VStack {
+            Text("Mood Graph for this month")
+                .font(.title)
+                .fontWeight(.semibold)
+                .multilineTextAlignment(.center)
+            
+            Divider()
+                .padding(.horizontal)
+            
+            
+        }
     }
 }
 
