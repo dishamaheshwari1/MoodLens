@@ -19,6 +19,7 @@ struct ContentView: View {
                 Text("Your feelings in full color")
                     .font(.subheadline)
                     .foregroundColor(.black)
+                
           
             }
             
@@ -41,7 +42,7 @@ struct ContentView: View {
                     .padding(.horizontal)
                     .padding(.top)
                     
-                    RoundedRectangle(cornerRadius: 15)
+                    RoundedRectangle(cornerRadius: 10)
                         .fill(Color.gray)
                         .frame(height: 200)
                         .shadow(radius: 3)
@@ -52,8 +53,16 @@ struct ContentView: View {
                     Text("Today's Insights")
                         .font(.headline)
                         .padding(.leading)
-                    
                 }
+
+                    HStack(spacing: 16) {
+                        Button("View Journal") {}
+                        Button("Home Button") {}
+                        Button("Create Log +") {}
+                        
+                        
+                    }
+                
                 Spacer()
             }
             Spacer()
