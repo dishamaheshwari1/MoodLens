@@ -2,7 +2,7 @@
 //  MoodGrid.swift
 //  MoodLens
 //
-//  Created by Scholar on 7/29/25.
+//  Created by Angelia on 7/29/25.
 //
 
 import SwiftUI
