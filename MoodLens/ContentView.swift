@@ -55,7 +55,8 @@ struct ContentView: View {
                         .padding(.leading)
                 }
 
-                    HStack(spacing: 16) {
+                HStack(alignment: .center, spacing: 16) {
+                        
                         Button("View Journal") {}
                         Button("Home Button") {}
                         Button("Create Log +") {}
