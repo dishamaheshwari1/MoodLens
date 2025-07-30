@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MoodGrid: View {
     
-    @State private var selectedColor: Color = .clear
+    let adaptive: [GridItem] = Array(repeating: .init(.adaptive(minimum: 50, maximum: 100)), count: 1)
     
     var body: some View {
                 
@@ -18,27 +18,26 @@ struct MoodGrid: View {
             Text("Mood Graph for this month")
                 .font(.title)
                 .fontWeight(.semibold)
-            
             Divider()
-                .padding(.horizontal)
-            Spacer()
+                .padding(.horizontal, 30.0)
+            
+            LazyVGrid (columns:adaptive, spacing: 10, pinnedViews: [.sectionHeaders]) {
+                Section {
+                    ForEach(0..<31) {_ in
+                        Color (red: .random(in: 0...1), green: .random(in:0...1), blue: .random(in: 0...1))
+                            .cornerRadius(20)
+                            .frame(height: 50)
+                    }
+                }
+            }
+            .padding(.horizontal)
         }
         
-        VStack {
-            ColorPicker(selection: $selectedColor, supportsOpacity: true, label: {
-                Text("")
-            })
-            .frame(width: 11.0, height: 10.0)
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 16).fill(selectedColor).stroke(.gray.opacity(0.4), style: .init(lineWidth: 2.0)))
-        }
-        .frame(width: 0.0, height: 0.0)
-        .background(selectedColor)
         
-        }
+        
+        
     }
-
-
+}
 
 #Preview {
     MoodGrid()
