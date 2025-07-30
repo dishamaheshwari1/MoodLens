@@ -40,10 +40,12 @@ struct ContentView: View {
                     HStack {
                         Text("Mood graph")
                             .font(.title3)
-                        
-                        Button(">") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                            
+                    Spacer()
+                        NavigationLink(destination: MoodGrid()) {
+                            Text(">")
+                                .font(.title2)
+                        }
+                
                         }
                         Spacer()
                         
@@ -84,8 +86,7 @@ struct ContentView: View {
                         NavigationLink(destination: LoggingView()) {
                             Text("Create Log +")
                         }
-                        
-                    }
+
                 }
                 
                 Spacer()
