@@ -20,6 +20,7 @@ struct ContentView: View {
                     .font(.subheadline)
                     .foregroundColor(.black)
                 
+                
           
             }
             
@@ -55,7 +56,7 @@ struct ContentView: View {
                         .padding(.leading)
                 }
 
-                HStack(alignment: .center, spacing: 16) {
+                HStack(spacing: 16) {
                         
                         Button("View Journal") {}
                         Button("Home Button") {}
@@ -63,7 +64,7 @@ struct ContentView: View {
                         
                         
                     }
-                
+               
                 Spacer()
             }
             Spacer()
