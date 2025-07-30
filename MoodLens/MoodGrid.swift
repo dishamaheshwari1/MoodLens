@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-
 struct MoodGrid: View {
     
-    let adaptive: [GridItem] = Array(repeating: .init(.adaptive(minimum: 50, maximum: 100)), count: 1)
+    let adaptive: [GridItem] = Array(repeating: .init(.adaptive(minimum: 50, maximum: 65)), count: 7)
     
     var body: some View {
-                
+        
         VStack {
             Text("Mood Graph for this month")
                 .font(.title)
@@ -21,24 +20,47 @@ struct MoodGrid: View {
             Divider()
                 .padding(.horizontal, 30.0)
             
-            LazyVGrid (columns:adaptive, spacing: 10, pinnedViews: [.sectionHeaders]) {
-                Section {
-                    ForEach(0..<31) {_ in
-                        Color (red: .random(in: 0...1), green: .random(in:0...1), blue: .random(in: 0...1))
-                            .cornerRadius(20)
-                            .frame(height: 50)
+            HStack {
+                Text ("Sun")
+                Spacer()
+                    .frame(width: 18)
+                Text ("Mon")
+                Spacer()
+                    .frame(width: 16.0)
+                Text ("Tue")
+                Spacer()
+                    .frame(width: 17.0)
+                Text ("Wed")
+                Spacer()
+                    .frame(width: 17)
+                Text ("Thu")
+                Spacer()
+                    .frame(width: 27)
+                Text ("Fri")
+                Spacer()
+                    .frame(width: 30.0)
+                Text ("Sat")
+            }
+            .padding(.horizontal, 23)
+            .font(.title3)
+            
+            ZStack {
+                LazyVGrid (columns:adaptive, spacing: 5, pinnedViews: [.sectionHeaders]) {
+                    Section {
+                        ForEach(0..<31) {_ in
+                            Color (.gray)
+                                .cornerRadius(10)
+                                .frame(height: 50)
+                        }
                     }
                 }
+                .padding([.leading, .bottom, .trailing])
             }
-            .padding(.horizontal)
+            ColorPaletteView()
+                .padding(.trailing)
         }
-        
-        
-        
-        
+        }
     }
-}
-
 #Preview {
     MoodGrid()
 }
