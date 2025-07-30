@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  MoodLens
 //
-//  Created by Disha Maheshwari on 7/29/25.
+//  Created by Maggie Le on 7/29/25.
 //
 
 import SwiftUI
