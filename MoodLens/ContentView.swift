@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
     var body: some View {
         VStack(spacing: 20){
             //header
-            VStack(spacing: 8) {
+            NavigationStack {
+            VStack(spacing: 16) {
                 
                 Text("MOODLENS")
                     .font(.largeTitle)
@@ -20,14 +23,14 @@ struct ContentView: View {
                     .font(.subheadline)
                     .foregroundColor(.black)
                 
+                Divider()
                 
-          
             }
             
             //welcome message
-            
+            Spacer()
             VStack(alignment: .leading, spacing: 20) {
-                Text("Welcome back, Maggie!")
+                Text("Welcome back, [NAME]!")
                     .font(.title2)
                     .fontWeight(.semibold)
                 Text("Let's Reflect on Your Day")
@@ -37,6 +40,11 @@ struct ContentView: View {
                     HStack {
                         Text("Mood graph")
                             .font(.title3)
+                        
+                        Button(">") {
+                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                            
+                        }
                         Spacer()
                         
                     }
@@ -50,21 +58,36 @@ struct ContentView: View {
                         .padding()
                 }
                 //insights section
-                VStack(alignment: .leading) {
+                
+                VStack(spacing: 8) {
                     Text("Today's Insights")
                         .font(.headline)
                         .padding(.leading)
-                }
-
-                HStack(spacing: 16) {
+                    
+                    HStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.gray)
                         
-                        Button("View Journal") {}
-                        Button("Home Button") {}
-                        Button("Create Log +") {}
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.gray)
+                        
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.gray)
                         
                         
                     }
-               
+                    
+                }
+                Divider()
+                    
+                    HStack(spacing: 16) {
+                        NavigationLink(destination: LoggingView()) {
+                            Text("Create Log +")
+                        }
+                        
+                    }
+                }
+                
                 Spacer()
             }
             Spacer()
