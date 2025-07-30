@@ -20,26 +20,54 @@ struct ContentView: View {
                     .font(.subheadline)
                     .foregroundColor(.black)
                 
-                Button(action: {}) {
-                    Text("Summary")
-                        .padding(.horizontal)
-                        .padding(.vertical, 6)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                        .shadow(radius: 2)
+                
+          
+            }
+            
+            //welcome message
+            
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Welcome back, Maggie!")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                Text("Let's Reflect on Your Day")
+                    .font(.headline)
+                //Mood graph box
+                VStack {
+                    HStack {
+                        Text("Mood graph")
+                            .font(.title3)
+                        Spacer()
+                        
+                    }
+                    .padding(.horizontal)
+                    .padding(.top)
+                    
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.gray)
+                        .frame(height: 200)
+                        .shadow(radius: 3)
+                        .padding()
                 }
-                
-                //welcome message
-                
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Welcome back, [Name]!")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                    Text("Let's Reflect on Your Day")
+                //insights section
+                VStack(alignment: .leading) {
+                    Text("Today's Insights")
                         .font(.headline)
+                        .padding(.leading)
                 }
+
+                HStack(spacing: 16) {
+                        
+                        Button("View Journal") {}
+                        Button("Home Button") {}
+                        Button("Create Log +") {}
+                        
+                        
+                    }
+               
                 Spacer()
             }
+            Spacer()
         }
         .padding()
     }
