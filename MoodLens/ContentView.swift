@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  MoodLens
 //
-//  Created by Disha Maheshwari on 7/29/25.
+//  Created by Maggie Le on 7/29/25.
 //
 
 import SwiftUI
@@ -16,6 +16,7 @@ struct ContentView: View {
             NavigationStack {
             VStack(spacing: 16) {
                 
+
                     Text("MOODLENS")
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -26,6 +27,7 @@ struct ContentView: View {
                     
                 
                     Divider()
+
                 
             }
             .background(Color.accentColor)
@@ -106,9 +108,11 @@ struct ContentView: View {
                         NavigationLink(destination: AboutView() ) {
                             Text("About MoodLens")
                             .foregroundColor(Color.blue)
+                            }
                         }
+                        
                     }
-                }
+               
                 Spacer()
             }
             Spacer()

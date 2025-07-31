@@ -9,7 +9,17 @@ import SwiftUI
 
 struct AboutView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack (spacing: 20) {
+            Text("About MoodLens")
+                .foregroundColor(Color("BlueColorText"))
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.leading)
+               
+                
+        }
+        Spacer()
+        .padding()
     }
 }
 
