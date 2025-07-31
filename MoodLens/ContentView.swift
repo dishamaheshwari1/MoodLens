@@ -43,7 +43,7 @@ struct ContentView: View {
                 //Mood graph box
                 VStack {
                     HStack {
-                        Text("Mood graph")
+                        Text("Mood Graph Summaries")
                             .font(.title3)
                             .fontWeight(.semibold)
                     Spacer()
@@ -60,12 +60,28 @@ struct ContentView: View {
                     }
                     .padding(.horizontal)
                     .padding(.top)
-                    
+                   
+                ZStack{
+                
                     RoundedRectangle(cornerRadius: 10)
-                    .fill(Color("PastelGreen"))
+                        .fill(Color("PastelGreen"))
                         .frame(height: 200)
                         .shadow(radius: 3)
+                    
+                    HStack(spacing: 60){
+                        NavigationLink(destination: MoodGrid()) {
+                            Text("Exercise")
+                                .foregroundColor(Color.blue)
+                             
+                        }
+                        NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                            Text("Me-Time")
+                                .foregroundColor(Color.blue)
+                        
+                        }
+                    }
                         .padding()
+                }
                 }
                 //insights section
                 
@@ -104,11 +120,7 @@ struct ContentView: View {
                     NavigationLink(destination: LoggingView()) {
                         Text("Create Log +")
                             .foregroundColor(Color.blue)
-                        Spacer()
-                        NavigationLink(destination: AboutView() ) {
-                            Text("About MoodLens")
-                            .foregroundColor(Color.blue)
-                            }
+                       
                         }
                         
                     }
