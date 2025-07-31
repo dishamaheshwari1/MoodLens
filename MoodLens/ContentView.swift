@@ -16,16 +16,16 @@ struct ContentView: View {
             NavigationStack {
             VStack(spacing: 16) {
                 
-                Text("MOODLENS")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("BlueColorText"))
-                
-                Text("Your feelings in full color")
-                    .font(.subheadline)
+                    Text("MOODLENS")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("BlueColorText"))
+               
+                    Text("Your feelings in full color")
+                        .font(.subheadline)
                     
                 
-                Divider()
+                    Divider()
                 
             }
             .background(Color.accentColor)
@@ -43,6 +43,7 @@ struct ContentView: View {
                     HStack {
                         Text("Mood graph")
                             .font(.title3)
+                            .fontWeight(.semibold)
                     Spacer()
                         NavigationLink(destination: MoodGrid()) {
                             Text(">")
@@ -59,7 +60,7 @@ struct ContentView: View {
                     .padding(.top)
                     
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(Color.gray)
+                    .fill(Color("PastelGreen"))
                         .frame(height: 200)
                         .shadow(radius: 3)
                         .padding()
@@ -67,20 +68,30 @@ struct ContentView: View {
                 //insights section
                 
                 VStack(spacing: 8) {
-                    Text("Today's Insights")
+                    Text("Emotional Insights")
                         .font(.headline)
                         .padding(.leading)
                     
                     HStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.gray)
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.gray)
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.gray)
-                        
+                       
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("PastelPink"))
+                            Text("Recognize your own emotional state to see how it affects your daily life")
+                                .multilineTextAlignment(.center)
+                          }
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("PastelPink"))
+                            Text("Find what keeps you motivated")
+                                .multilineTextAlignment(.center)
+                        }
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("PastelPink"))
+                            Text("Never undervalue your emotions")
+                                .multilineTextAlignment(.center)
+                        }
                         
                     }
                     
