@@ -7,39 +7,60 @@
 
 import SwiftUI
 
-
 struct MoodGrid: View {
     
-    @State private var selectedColor: Color = .clear
+    let adaptive: [GridItem] = Array(repeating: .init(.adaptive(minimum: 50, maximum: 65)), count: 7)
     
     var body: some View {
-                
+        
         VStack {
             Text("Mood Graph for this month")
                 .font(.title)
                 .fontWeight(.semibold)
-            
             Divider()
-                .padding(.horizontal)
-            Spacer()
+                .padding(.horizontal, 30.0)
+            
+            HStack {
+                Text ("Sun")
+                Spacer()
+                    .frame(width: 18)
+                Text ("Mon")
+                Spacer()
+                    .frame(width: 16.0)
+                Text ("Tue")
+                Spacer()
+                    .frame(width: 17.0)
+                Text ("Wed")
+                Spacer()
+                    .frame(width: 17)
+                Text ("Thu")
+                Spacer()
+                    .frame(width: 27)
+                Text ("Fri")
+                Spacer()
+                    .frame(width: 30.0)
+                Text ("Sat")
+            }
+            .padding(.horizontal, 23)
+            .font(.title3)
+            
+            ZStack {
+                LazyVGrid (columns:adaptive, spacing: 5, pinnedViews: [.sectionHeaders]) {
+                    Section {
+                        ForEach(0..<31) {_ in
+                            Color (.gray)
+                                .cornerRadius(10)
+                                .frame(height: 50)
+                        }
+                    }
+                }
+                .padding([.leading, .bottom, .trailing])
+            }
+            ColorPaletteView()
+                .padding(.trailing)
         }
-        
-        VStack {
-            ColorPicker(selection: $selectedColor, supportsOpacity: true, label: {
-                Text("")
-            })
-            .frame(width: 11.0, height: 10.0)
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 16).fill(selectedColor).stroke(.gray.opacity(0.4), style: .init(lineWidth: 2.0)))
-        }
-        .frame(width: 0.0, height: 0.0)
-        .background(selectedColor)
-        
         }
     }
-
-
-
 #Preview {
     MoodGrid()
 }
