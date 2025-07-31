@@ -17,7 +17,7 @@ struct LoggingView: View {
     @State private var activityLogs: [String: Int] = [:]
 
     let availableMoods = ["😊", "😐", "😢", "😠", "😴"]
-    let activities = ["Exercise", "Reading", "Meditation"]
+    let activities = ["Exercise", "Sleep", "Me-Time"]
 
     var body: some View {
         NavigationStack {
