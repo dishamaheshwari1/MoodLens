@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+   
     
     var body: some View {
         VStack(spacing: 20){
@@ -16,18 +16,23 @@ struct ContentView: View {
             NavigationStack {
             VStack(spacing: 16) {
                 
-                Text("MOODLENS")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text("Your feelings in full color")
-                    .font(.subheadline)
-                    .foregroundColor(.black)
 
-                Divider()
+                    Text("MOODLENS")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("BlueColorText"))
+               
+                    Text("Your feelings in full color")
+                        .font(.subheadline)
+                    
+                
+                    Divider()
+
                 
             }
+            .background(Color.accentColor)
             
-            //welcome message
+                //welcome message
             Spacer()
             VStack(alignment: .leading, spacing: 20) {
                 Text("Welcome back, [NAME]!")
@@ -40,10 +45,13 @@ struct ContentView: View {
                     HStack {
                         Text("Mood graph")
                             .font(.title3)
+                            .fontWeight(.semibold)
                     Spacer()
                         NavigationLink(destination: MoodGrid()) {
                             Text(">")
                                 .font(.title2)
+                                .foregroundColor(Color.blue)
+                                
                         }
                 
                         }
@@ -54,7 +62,7 @@ struct ContentView: View {
                     .padding(.top)
                     
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(Color.gray)
+                    .fill(Color("PastelGreen"))
                         .frame(height: 200)
                         .shadow(radius: 3)
                         .padding()
@@ -62,83 +70,56 @@ struct ContentView: View {
                 //insights section
                 
                 VStack(spacing: 8) {
-                    Text("Today's Insights")
+                    Text("Emotional Insights")
                         .font(.headline)
                         .padding(.leading)
                     
                     HStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.gray)
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.gray)
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.gray)
-                        
+                       
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("PastelPink"))
+                            Text("Recognize your own emotional state to see how it affects your daily life")
+                                .multilineTextAlignment(.center)
+                          }
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("PastelPink"))
+                            Text("Find what keeps you motivated")
+                                .multilineTextAlignment(.center)
+                        }
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("PastelPink"))
+                            Text("Never undervalue your emotions")
+                                .multilineTextAlignment(.center)
+                        }
                         
                     }
                     
                 }
                 Divider()
-                    
-                    HStack(spacing: 16) {
-                        NavigationLink(destination: LoggingView()) {
-                            Text("Create Log +")
-                        }
-
-                }
-
-            }
-            
-            //welcome message
-            
-            VStack(alignment: .leading, spacing: 20) {
-                Text("Welcome back, Maggie!")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                Text("Let's Reflect on Your Day")
-                    .font(.headline)
-                //Mood graph box
-                VStack {
-                    HStack {
-                        Text("Mood graph")
-                            .font(.title3)
+                
+                HStack {
+                    NavigationLink(destination: LoggingView()) {
+                        Text("Create Log +")
+                            .foregroundColor(Color.blue)
                         Spacer()
-                        
-                    }
-                    .padding(.horizontal)
-                    .padding(.top)
-                    
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color.gray)
-                        .frame(height: 200)
-                        .shadow(radius: 3)
-                        .padding()
-                }
-                //insights section
-                VStack(alignment: .leading) {
-                    Text("Today's Insights")
-                        .font(.headline)
-                        .padding(.leading)
-                }
-
-                HStack(spacing: 16) {
-                        
-                        Button("View Journal") {}
-                        Button("Home Button") {}
-                        Button("Create Log +") {}
-                        
+                        NavigationLink(destination: AboutView() ) {
+                            Text("About MoodLens")
+                            .foregroundColor(Color.blue)
+                            }
+                        }
                         
                     }
                
-
                 Spacer()
             }
             Spacer()
+            
         }
         .padding()
-    }
+        .ignoresSafeArea(edges: .all)    }
 }
 
 #Preview {
