@@ -102,14 +102,20 @@ struct ContentView: View {
                     NavigationLink(destination: LoggingView()) {
                         Text("Create Log +")
                             .foregroundColor(Color.blue)
+                        Spacer()
+                        NavigationLink(destination: AboutView() ) {
+                            Text("About MoodLens")
+                            .foregroundColor(Color.blue)
+                        }
                     }
                 }
                 Spacer()
             }
             Spacer()
+            
         }
         .padding()
-    }
+        .ignoresSafeArea(edges: .all)    }
 }
 
 #Preview {
