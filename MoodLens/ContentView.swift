@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+   
     
     var body: some View {
         VStack(spacing: 20){
@@ -19,15 +19,18 @@ struct ContentView: View {
                 Text("MOODLENS")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .foregroundColor(Color("BlueColorText"))
+                
                 Text("Your feelings in full color")
                     .font(.subheadline)
-                    .foregroundColor(.black)
+                    
                 
                 Divider()
                 
             }
+            .background(Color.accentColor)
             
-            //welcome message
+                //welcome message
             Spacer()
             VStack(alignment: .leading, spacing: 20) {
                 Text("Welcome back, [NAME]!")
@@ -44,6 +47,8 @@ struct ContentView: View {
                         NavigationLink(destination: MoodGrid()) {
                             Text(">")
                                 .font(.title2)
+                                .foregroundColor(Color.blue)
+                                
                         }
                 
                         }
@@ -81,14 +86,13 @@ struct ContentView: View {
                     
                 }
                 Divider()
-                    
-                    HStack(spacing: 16) {
-                        NavigationLink(destination: LoggingView()) {
-                            Text("Create Log +")
-                        }
-
-                }
                 
+                HStack {
+                    NavigationLink(destination: LoggingView()) {
+                        Text("Create Log +")
+                            .foregroundColor(Color.blue)
+                    }
+                }
                 Spacer()
             }
             Spacer()
