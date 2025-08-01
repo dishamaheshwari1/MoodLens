@@ -12,6 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 20){
+            
             //header
             NavigationStack {
             VStack(spacing: 16) {
@@ -31,7 +32,7 @@ struct ContentView: View {
                 
             }
             .background(Color.accentColor)
-            
+                
                 //welcome message
             Spacer()
             VStack(alignment: .leading, spacing: 20) {
@@ -71,12 +72,21 @@ struct ContentView: View {
                     HStack(spacing: 60){
                         NavigationLink(destination: MoodGrid()) {
                             Text("Exercise")
-                                .foregroundColor(Color.blue)
+                                .foregroundColor(Color.black)
+                                .font(.title2)
+                                .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
+                                .background()
+                                .cornerRadius(10)
                              
                         }
                         NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
                             Text("Me-Time")
-                                .foregroundColor(Color.blue)
+                                .font(.title2)
+                                .foregroundColor(Color.black)
+                                .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
+                                .background()
+                                .cornerRadius(10)
+
                         
                         }
                     }
@@ -97,6 +107,7 @@ struct ContentView: View {
                                 .fill(Color("PastelPink"))
                             Text("Recognize your own emotional state to see how it affects your daily life")
                                 .multilineTextAlignment(.center)
+                                .padding(.horizontal)
                           }
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
