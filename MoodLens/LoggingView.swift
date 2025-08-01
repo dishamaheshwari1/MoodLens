@@ -50,7 +50,7 @@ struct LoggingView: View {
                             HStack {
                                 ForEach(1...5, id: \.self) { level in
                                     Rectangle()
-                                        .fill(colorForLevel(level))
+                                        .fill(colorForLevel(level, activity: activity))
                                         .frame(width: 30, height: 30)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 4)
@@ -79,9 +79,19 @@ struct LoggingView: View {
         }
     }
 
-    func colorForLevel(_ level: Int) -> Color {
-        let baseColor = Color.green
-        return baseColor.opacity(0.2 + 0.15 * Double(level - 1))
+    func colorForLevel(_ level: Int, activity: String) -> Color {
+        let opacity = 0.2 + 0.15 * Double(level - 1)
+
+        switch activity {
+        case "Exercise":
+            return Color.green.opacity(opacity)
+        case "Sleep":
+            return Color.purple.opacity(opacity)
+        case "Me-Time":
+            return Color.pink.opacity(opacity)
+        default:
+            return Color.gray.opacity(opacity)
+        }
     }
 
     func saveTodayEntry() {
@@ -109,7 +119,6 @@ struct LoggingView: View {
         return [:]
     }
 }
-
 
 #Preview {
     LoggingView()
